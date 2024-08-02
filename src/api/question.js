@@ -20,12 +20,14 @@ module.exports = [
     response() {
       return new SuccessRes({
         id: Mock.mock("@guid"),
-        title: Mock.mock("@ctitle(5, 10)"),
-        description: Mock.mock("@cparagraph(1, 3)"),
-        css: null,
-        scripts: null,
         isPublished: true,
-        componentList: getQNCList(),
+        schema: {
+          title: Mock.mock("@ctitle(5, 10)"),
+          description: Mock.mock("@cparagraph(1, 3)"),
+          css: null,
+          scripts: null,
+          componentList: getQNCList(),
+        },
       });
     },
   },

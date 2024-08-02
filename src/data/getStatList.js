@@ -10,17 +10,17 @@ function getStatList({ len = 10 }) {
       id: Random.id(),
     };
     qncList.forEach((item, idx) => {
-      const { qn_id, type, props } = item;
+      const { qnc_id, type, props } = item;
       if (type === "qnInputNumber") {
-        stat[qn_id] = Random.integer(0, 100);
+        stat[qnc_id] = Random.integer(0, 100);
       } else if (type === "qnInput") {
-        stat[qn_id] = Random.ctitle();
+        stat[qnc_id] = Random.ctitle();
       } else if (type === "qnTextArea") {
-        stat[qn_id] = Random.ctitle();
+        stat[qnc_id] = Random.ctitle();
       } else if (type === "qnRadio") {
-        stat[qn_id] = props.options[0].label;
+        stat[qnc_id] = props.options[0].label;
       } else if (type === "qnCheckbox") {
-        stat[qn_id] = `${props.options[0].label},${props.options[1].label}`;
+        stat[qnc_id] = `${props.options[0].label},${props.options[1].label}`;
       } else {
         // qnTitle | qnParagraph |qnInfo  纯文字提示 没有回答
       }

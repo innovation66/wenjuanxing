@@ -4,7 +4,7 @@ const Random = Mock.Random;
 const textTestQNC = [
   {
     id: Random.guid(),
-    qn_id: "qn_title_id", //  Random.guid() 生成的ID不固定 导致统计答卷时Table无法匹配
+    qnc_id: "qn_title_id", //  Random.guid() 生成的ID不固定 导致统计答卷时Table无法匹配
     title: "Title",
     type: "qnTitle",
     props: {
@@ -17,7 +17,7 @@ const textTestQNC = [
   },
   {
     id: Random.guid(),
-    qn_id: "qn_paragraph_id",
+    qnc_id: "qn_paragraph_id",
     title: "Paragraph",
     type: "qnParagraph",
     props: {
@@ -29,7 +29,7 @@ const textTestQNC = [
   },
   {
     id: Random.guid(),
-    qn_id: "qn_info_id",
+    qnc_id: "qn_info_id",
     title: "Info",
     type: "qnInfo",
     props: {
@@ -44,7 +44,7 @@ const textTestQNC = [
 const inputTestQNC = [
   {
     id: Random.guid(),
-    qn_id: "qn_input_number_id",
+    qnc_id: "qn_input_number_id",
     title: "InputNumber",
     type: "qnInputNumber",
     props: {
@@ -57,7 +57,7 @@ const inputTestQNC = [
   },
   {
     id: Random.guid(),
-    qn_id: "qn_input_id",
+    qnc_id: "qn_input_id",
     title: "Input",
     type: "qnInput",
     props: {
@@ -71,7 +71,7 @@ const inputTestQNC = [
   },
   {
     id: Random.guid(),
-    qn_id: "qn_textarea_id",
+    qnc_id: "qn_textarea_id",
     title: "TextArea",
     type: "qnTextArea",
     props: {
@@ -87,7 +87,7 @@ const inputTestQNC = [
 const choiceTestQNC = [
   {
     id: Random.guid(),
-    qn_id: "qn_radio_id",
+    qnc_id: "qn_radio_id",
     title: "Radio",
     type: "qnRadio",
     props: {
@@ -105,7 +105,7 @@ const choiceTestQNC = [
   },
   {
     id: Random.guid(),
-    qn_id: "qn_check_id",
+    qnc_id: "qn_check_id",
     title: "Checkbox",
     type: "qnCheckbox",
     props: {
@@ -128,7 +128,7 @@ const testQNC = [...textTestQNC, ...inputTestQNC, ...choiceTestQNC];
 const statQNC = [
   {
     id: Random.guid(),
-    qn_id: "qn_info_id",
+    qnc_id: "qn_info_id",
     title: "Info",
     type: "qnInfo",
     props: {
@@ -140,7 +140,19 @@ const statQNC = [
   },
   {
     id: Random.guid(),
-    qn_id: "qn_input_id",
+    qnc_id: "qn_rate_id",
+    title: "Rate",
+    type: "qnRate",
+    props: {
+      title: "您的评分",
+      character: "heart",
+    },
+    hidden: false,
+    locked: false,
+  },
+  {
+    id: Random.guid(),
+    qnc_id: "qn_input_id",
     title: "Input",
     type: "qnInput",
     props: {
@@ -153,7 +165,7 @@ const statQNC = [
   },
   {
     id: Random.guid(),
-    qn_id: "qn_input_number_id",
+    qnc_id: "qn_input_number_id",
     title: "InputNumber",
     type: "qnInputNumber",
     props: {
@@ -165,7 +177,7 @@ const statQNC = [
   },
   {
     id: Random.guid(),
-    qn_id: "qn_radio_id",
+    qnc_id: "qn_radio_id",
     title: "Radio",
     type: "qnRadio",
     props: {
@@ -182,7 +194,7 @@ const statQNC = [
   },
   {
     id: Random.guid(),
-    qn_id: "qn_check_id",
+    qnc_id: "qn_check_id",
     title: "Checkbox",
     type: "qnCheckbox",
     props: {
@@ -200,7 +212,7 @@ const statQNC = [
   },
   {
     id: Random.guid(),
-    qn_id: "qn_textarea_id",
+    qnc_id: "qn_textarea_id",
     title: "TextArea",
     type: "qnTextArea",
     props: {
@@ -212,7 +224,7 @@ const statQNC = [
   },
   {
     id: Random.guid(),
-    qn_id: "qn_paragraph_id",
+    qnc_id: "qn_paragraph_id",
     title: "Paragraph",
     type: "qnParagraph",
     props: {
@@ -224,7 +236,7 @@ const statQNC = [
   },
   {
     id: Random.guid(),
-    qn_id: "qn_title_id", //  Random.guid() 生成的ID不固定 导致统计答卷时Table无法匹配
+    qnc_id: "qn_title_id", //  Random.guid() 生成的ID不固定 导致统计答卷时Table无法匹配
     title: "Title",
     type: "qnTitle",
     props: {
@@ -237,7 +249,7 @@ const statQNC = [
   },
 ];
 function getQNCList() {
-  return statQNC;
+  return [];
 }
 
 module.exports = getQNCList;
