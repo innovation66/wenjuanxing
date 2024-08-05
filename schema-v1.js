@@ -79,7 +79,13 @@ const schema = {
       },
       hidden: false,
       locked: false,
-      // 当前题 (current) 填写了 (condition: yes) 时，显示 (action: show) 下一题 (next)
+      // id 为 relation 的唯一标识
+      // 有value 表示选择，没有value表示填写
+      // condition为条件， yes 表示做了， no 表示未做
+      // action 为动作， show 表示显示， 暂时只有 show
+      // current 为当前题的 qnc_id,
+      // next 为下一题的 qnc_id
+      // 以下关系为：当前题 (current) 填写了 (condition: yes) 时，显示 (action: show) 下一题 (next), 此处没有value，表示填写
       relations: [
         {
           id: "JewZwcjQGQ6z4dtv2yYsw",
@@ -136,6 +142,9 @@ const schema = {
       },
       hidden: false,
       locked: false,
+      // 有value 表示选择，没有value表示填写
+      // 当前题 (current) 选中了 (condition: yes) 值 (value)时，显示 (action: show) 下一题 (next)
+      // 当前题 (current) 未选中了 (condition: no) 值 (value)时，显示 (action: show) 下一题 (next)
       relations: [
         {
           id: "oujeUY7Ak_lxWnbAbi8OB",
@@ -234,6 +243,9 @@ const schema = {
       },
       hidden: false,
       locked: false,
+      // 有value 表示选择，有value和value2 表示选择值是一个区间
+      // 当前题 (current) 选中了 (condition: yes) 值在区间 [value， value2]时，显示 (action: show) 下一题 (next)
+      // 当前题 (current) 未选中了 (condition: no) 值在区间 [value， value2]时，显示 (action: show) 下一题 (next)
       relations: [
         {
           id: "KOpiMLfsALAn9HK4b3WsD",
