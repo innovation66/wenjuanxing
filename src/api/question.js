@@ -6,7 +6,7 @@ const getQNList = require("../data/getQNList");
 
 module.exports = [
   {
-    url: "/question",
+    url: "/question/create",
     method: "post",
     response() {
       return new SuccessRes({
@@ -15,12 +15,14 @@ module.exports = [
     },
   },
   {
-    url: "/question/:id",
+    url: "/question/detail/:id",
     method: "get",
     response() {
       return new SuccessRes({
         id: Mock.mock("@guid"),
         isPublished: true,
+        link: Mock.mock("@url"),
+        qrCode: Mock.mock("@url"),
         schema: {
           title: Mock.mock("@ctitle(5, 10)"),
           description: Mock.mock("@cparagraph(1, 3)"),
@@ -31,8 +33,9 @@ module.exports = [
       });
     },
   },
+  // qn list
   {
-    url: "/question",
+    url: "/question/list",
     method: "get",
     response(ctx) {
       const { url = "", query = {} } = ctx;
@@ -44,9 +47,10 @@ module.exports = [
       });
     },
   },
+  // 单个删除 收藏等
   {
-    url: "/question/:id",
-    method: "patch",
+    url: "/question/patch",
+    method: "post",
     response() {
       return new SuccessRes({
         id: Mock.mock("@guid"),
@@ -59,25 +63,27 @@ module.exports = [
       });
     },
   },
+
   // 单个删除
-  {
-    url: "/question/:id",
-    method: "delete",
-    response() {
-      return new SuccessRes(null, { msg: "删除成功" });
-    },
-  },
+  // {
+  //   url: "/question/delete",
+  //   method: "post",
+  //   response() {
+  //     return new SuccessRes(null, { msg: "删除成功" });
+  //   },
+  // },
+
   // 批量删除
   {
-    url: "/question",
-    method: "delete",
+    url: "/question/delete",
+    method: "post",
     response() {
       return new SuccessRes(null, { msg: "删除成功" });
     },
   },
   // 单个复制
   {
-    url: "/question/copy/:id",
+    url: "/question/copy",
     method: "post",
     response() {
       return new SuccessRes({
